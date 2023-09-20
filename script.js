@@ -8,12 +8,12 @@ console.log("en la posición 3 tenemos: " + items[0])
 // 2. Definición función de búsqueda
 //----------------------------------
 // a la función de busqueda le vamos a pasar dos parametros: el array items y el elemento_a_buscar y el objetivo del algoritmo es encontrar en que posición está el elemento_a_buscar
-function search(items, elemento_a_buscar) { 
-  var posicion = 0;
+function search(items, posicion_elemento) { 
+  var contador = 0;
   var total_itemsArray = items.length;
-  while (posicion < total_itemsArray) {
-    if (items[posicion] == elemento_a_buscar) { 
-      return posicion;
+  while (contador < total_itemsArray) {
+    if (items[contador] == posicion_elemento) { 
+      return items[contador];
     }
     posicion++; // sumar de a un
   }
@@ -22,7 +22,7 @@ function search(items, elemento_a_buscar) {
 //-----------------------------------------------------------
 // 3. Ejecución de la función: buscar un elemento en el array
 //-----------------------------------------------------------
-var resultado = search(items, 13);
+var resultado = search(items, 2);
 console.log(resultado)
 //----------------------------------
 // 4. Salida del programa Output (O)
@@ -31,9 +31,9 @@ var resultadoHTML = document.createElement('p');
 
 resultadoHTML.id = 'resultado'; // Asigna el ID que desees
 if (resultado !== null) {
-  resultadoHTML.textContent = 'El elemento se encuentra en la posición: ' + resultado + ' :)';
+  resultadoHTML.textContent = 'El elemento que se encuentra en la posicion 2 es: ' + resultado + ' :)';
 } else {
-  resultadoHTML.textContent = 'El elemento no se encuentra en el array :(';
+  resultadoHTML.textContent = 'Debes ingresar un numero entre 0 y 6 :(';
 }
 document.body.appendChild(resultadoHTML);
 
